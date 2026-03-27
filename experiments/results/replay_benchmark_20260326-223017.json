@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "timestamp": "20260326-223017",
+    "graphs_path": "C:\\Users\\deepanshu\\Documents\\nids-agent\\data\\processed\\replay_cache.pt",
+    "graphs_source": "replay_cache",
+    "model_path": "C:\\Users\\deepanshu\\Documents\\nids-agent\\experiments\\checkpoints\\best_gnn.pt",
+    "adapter_path": "C:\\Users\\deepanshu\\Documents\\nids-agent\\experiments\\checkpoints\\best_maml_adapter.pt",
+    "window_limit": 500
+  },
+  "baseline": {
+    "mode": "baseline",
+    "windows_processed": 500,
+    "window_accuracy": 0.9,
+    "window_f1": 0.8913043478260869,
+    "attack_precision": 0.8401639344262295,
+    "attack_recall": 0.9490740740740741,
+    "avg_confidence": 0.961964637875557,
+    "drift_events": 3,
+    "hypotheses_tried": 0,
+    "hypotheses_accepted": 0,
+    "final_model_version": 0,
+    "runtime_seconds": 2.292443037033081,
+    "version_change_points": [
+      {
+        "window_id": 1,
+        "model_version": 0
+      }
+    ]
+  },
+  "adaptive": {
+    "mode": "adaptive",
+    "windows_processed": 500,
+    "window_accuracy": 0.898,
+    "window_f1": 0.8893709327548807,
+    "attack_precision": 0.8367346938775511,
+    "attack_recall": 0.9490740740740741,
+    "avg_confidence": 0.9671185095310211,
+    "drift_events": 3,
+    "hypotheses_tried": 3,
+    "hypotheses_accepted": 3,
+    "final_model_version": 3,
+    "runtime_seconds": 8.435652017593384,
+    "version_change_points": [
+      {
+        "window_id": 1,
+        "model_version": 0
+      },
+      {
+        "window_id": 157,
+        "model_version": 1
+      },
+      {
+        "window_id": 291,
+        "model_version": 2
+      },
+      {
+        "window_id": 371,
+        "model_version": 3
+      }
+    ]
+  },
+  "adaptive_drift_events": [
+    {
+      "window_id": 156,
+      "detector": "SHIFT",
+      "trigger_reason": "Recent drift score rose from 0.000 to 0.013",
+      "trigger_score": 0.0125,
+      "accepted": true,
+      "model_version": 1,
+      "before_f1": 0.9974,
+      "after_f1": 0.9983
+    },
+    {
+      "window_id": 290,
+      "detector": "SHIFT",
+      "trigger_reason": "Recent drift score rose from 0.013 to 0.026",
+      "trigger_score": 0.0125,
+      "accepted": true,
+      "model_version": 2,
+      "before_f1": 0.9986,
+      "after_f1": 0.9989
+    },
+    {
+      "window_id": 370,
+      "detector": "SHIFT",
+      "trigger_reason": "Recent drift score rose from 0.014 to 0.062",
+      "trigger_score": 0.0483,
+      "accepted": true,
+      "model_version": 3,
+      "before_f1": 0.9965,
+      "after_f1": 0.9953
+    }
+  ]
+}

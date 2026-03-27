@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "timestamp": "20260326-220945",
+    "graphs_path": "C:\\Users\\deepanshu\\Documents\\nids-agent\\data\\processed\\graphs.pt",
+    "model_path": "C:\\Users\\deepanshu\\Documents\\nids-agent\\experiments\\checkpoints\\best_gnn.pt",
+    "window_limit": 1000
+  },
+  "baseline": {
+    "mode": "baseline",
+    "windows_processed": 1000,
+    "window_accuracy": 0.909,
+    "window_f1": 0.9327420546932742,
+    "attack_precision": 0.8739612188365651,
+    "attack_recall": 1.0,
+    "avg_confidence": 0.9856271725296974,
+    "drift_events": 2,
+    "hypotheses_tried": 0,
+    "hypotheses_accepted": 0,
+    "final_model_version": 0,
+    "runtime_seconds": 5.258236885070801,
+    "version_change_points": [
+      {
+        "window_id": 1,
+        "model_version": 0
+      }
+    ]
+  },
+  "adaptive": {
+    "mode": "adaptive",
+    "windows_processed": 1000,
+    "window_accuracy": 0.914,
+    "window_f1": 0.9362017804154302,
+    "attack_precision": 0.8800557880055788,
+    "attack_recall": 1.0,
+    "avg_confidence": 0.9858156133294106,
+    "drift_events": 1,
+    "hypotheses_tried": 1,
+    "hypotheses_accepted": 1,
+    "final_model_version": 1,
+    "runtime_seconds": 7.428667068481445,
+    "version_change_points": [
+      {
+        "window_id": 1,
+        "model_version": 0
+      },
+      {
+        "window_id": 137,
+        "model_version": 1
+      }
+    ]
+  },
+  "adaptive_drift_events": [
+    {
+      "window_id": 136,
+      "detector": "SHIFT",
+      "trigger_reason": "Recent drift score rose from 0.018 to 0.032",
+      "trigger_score": 0.014,
+      "accepted": true,
+      "model_version": 1,
+      "before_f1": 0.0,
+      "after_f1": 0.0
+    }
+  ]
+}

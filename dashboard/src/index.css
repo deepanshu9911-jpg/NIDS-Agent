@@ -1,0 +1,75 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #080b0f;
+  --bg1:       #0d1117;
+  --bg2:       #131920;
+  --bg3:       #1a2230;
+  --border:    rgba(0, 255, 163, 0.12);
+  --border2:   rgba(0, 255, 163, 0.25);
+  --green:     #00ffa3;
+  --green-dim: rgba(0, 255, 163, 0.15);
+  --red:       #ff4d6a;
+  --red-dim:   rgba(255, 77, 106, 0.15);
+  --amber:     #ffa94d;
+  --amber-dim: rgba(255, 169, 77, 0.12);
+  --blue:      #4da6ff;
+  --blue-dim:  rgba(77, 166, 255, 0.12);
+  --text:      #c8d6e0;
+  --text-dim:  #5a7080;
+  --text-bright: #e8f4f8;
+  --mono:      'DM Mono', monospace;
+  --display:   'Syne', sans-serif;
+  --radius:    6px;
+}
+
+html, body, #root {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg1); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+/* scan-line overlay for that CRT feel */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.03) 2px,
+    rgba(0,0,0,0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  49%       { opacity: 1; }
+  50%       { opacity: 0; }
+}

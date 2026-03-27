@@ -1,0 +1,8 @@
+{
+  "inner_lr": 0.01,
+  "inner_steps": 3,
+  "weight_decay": 0.0001,
+  "head_only": true,
+  "meta_algorithm": "first_order_fallback",
+  "val_f1": 0.25
+}
